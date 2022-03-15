@@ -5,7 +5,7 @@
  *main-prints putchar and newline
  *return:always 0 
  */
-int main()
+int main(void)
 {
 	putchar('_');
 	putchar('p');
