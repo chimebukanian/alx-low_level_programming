@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 /**
- *
- *main-prints putchar and newline
- *return:always 0 
+ * main -  prints Holberton, followed by a new line
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -16,5 +15,6 @@ int main(void)
 	putchar('a');
 	putchar('r');
 	putchar('\n');
-	return  (0);
+
+	return (0);
 }
