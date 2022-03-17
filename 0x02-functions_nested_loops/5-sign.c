@@ -1,31 +1,29 @@
 #include "main.h"
 
 /**
- *  print_last_digit - last digit
+ * print_sign - return 0 letter not lowercase, 1 letter lowercase
  *
- *@n: The int to print
+ *@n: the int to print
  * Return: Always 0.
  */
-
-int print_last_digit(int n)
-
+int print_sign(int n)
 {
-int last_digit;
-
-if (n < 0)
+if (n > 0)
 {
-last_digit = (-1 * (n % 10));
-_putchar (last_digit + '0');
-return (last_digit);
+_putchar ('+');
+return (1);
+}
+
+else if (n == 0)
+{
+_putchar ('0');
+return (0);
 }
 
 else
 {
-last_digit = (n % 10);
-_putchar (last_digit + '0');
-return (last_digit);
+_putchar ('-');
+return (-1);
 }
-
-_putchar('\n');
 
 }
