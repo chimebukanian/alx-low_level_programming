@@ -1,26 +1,22 @@
-#include "main.h"
- of str to concatenate
- ~ *
- * Return: a pointer to the resulting string dest
+#include "holberton.h"
+
+/**
+ * *_strncat - Concatenate two strings
+ * @dest: Destiny string.
+ * @src: Source string.
+ * @n: Bytes from src string.
+ * Return: Destiny string dest.
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, j;
+	int index, size;
 
-	i = 0;
-	j = 0;
-
-	while (dest[i] != '\0')
-		i++;
-
-	while (src[j] != '\0' && j < n)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-
-	dest[i] = '\0';
-
+	for (size = 0; dest[size] != '\0'; size++)
+		;
+	for (index = size;
+	     n > 0 && src[index - size] != '\0';
+	     index++, n--)
+		dest[index] = src[index - size];
+	dest[index] = '\0';
 	return (dest);
 }
