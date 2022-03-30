@@ -1,5 +1,4 @@
-
-#include "holberton.h"
+#include "main.h"
 
 /**
  * factorial - returns the factorial of a number
