@@ -1,19 +1,41 @@
 #include "lists.h"
+#include <string.h>
 
 /**
- * list_len - Counts the length of a linked list
- * @h: pointer to the struct
- * Return: the number of nodes
+ * _strlen - returns the length of the string
+ * @s: takes string
+ *
+ * Return: returns the length int
  */
-size_t list_len(const list_t *h)
+
+unsigned int _strlen(const char *s)
 {
-	unsigned int i = 0;
+	unsigned int count;
 
-	while (h != NULL)
-	{
-		h = h->next;
-		i++;
-	}
+	count = 0;
+	while (s[count])
+		count++;
 
-	return (i);
+	return (count);
+}
+
+
+/**
+ * add_node - adds a node to a linked list
+ * @head: the head of a linked list
+ * @str: string to be duplicated
+ * Return: NULL if failed, or address of the new element
+ */
+list_t *add_node(list_t **head, const char *str)
+{
+	list_t *member = malloc(sizeof(list_t));
+
+	if (member == NULL)
+		return (NULL);
+	member->str = strdup(str);
+	member->len = _strlen(str);
+	member->next = *head;
+	*head = member;
+
+	return (*head);
 }
